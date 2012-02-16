@@ -1,6 +1,6 @@
 package main
 
-import "sdl"
+import "github.com/paul-lalonde/Go-SDL/sdl"
 import "fmt"
 
 func listModes(flags uint32) {
