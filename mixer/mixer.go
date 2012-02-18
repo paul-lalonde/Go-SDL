@@ -7,8 +7,10 @@ functions have been changed to be in a more object-oriented style
 */
 package mixer
 
-// #cgo pkg-config: sdl
-// #cgo LDFLAGS: -lSDL_mixer
+// #cgo darwin CFLAGS: -I/Library/Frameworks/SDL.framework/Headers -I/Library/Frameworks/SDL_mixer.framework/Headers
+// #cgo darwin LDFLAGS: -framework SDL -framework SDL_mixer
+// #cgo linux pkg-config: sdl
+// #cgo linux LDFLAGS: -lSDL_mixer
 // #include "SDL_mixer.h"
 import "C"
 import "unsafe"

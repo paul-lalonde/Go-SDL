@@ -7,8 +7,10 @@ that work with loaded fonts are changed to have a more object-oriented feel.
 */
 package ttf
 
-// #cgo pkg-config: sdl
-// #cgo LDFLAGS: -lSDL_ttf
+// #cgo darwin CFLAGS: -I/Library/Frameworks/SDL.framework/Headers -I/Library/Frameworks/SDL_ttf.framework/Headers
+// #cgo darwin LDFLAGS: -framework SDL -framework SDL_ttf
+// #cgo linux pkg-config: sdl
+// #cgo linux LDFLAGS: -lSDL_ttf
 // #include "SDL_ttf.h"
 import "C"
 import "github.com/paul-lalonde/Go-SDL/sdl"
